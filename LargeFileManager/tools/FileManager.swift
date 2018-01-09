@@ -95,13 +95,13 @@ enum ComponentsError: Error {
     case littleFile
 }
 
-protocol HandelFileDelegate {
+protocol HandleFileDelegate {
     
     func startDivideFile(file: String)
     func endDivideFile(file: String)
     
-    func startCompositFile(file: String)
-    func endCompositFile(file: String)
+    func startComposeFile(file: String)
+    func endComposeFile(file: String)
 }
 
 extension FileManager {
@@ -118,7 +118,7 @@ extension FileManager {
         }
     }
     
-    func handlerFile(path: String, delegate:HandelFileDelegate) throws {
+    func handleFile(path: String, delegate:HandleFileDelegate) throws {
         
         guard self.fileExists(atPath: path) else {
             return
@@ -129,9 +129,9 @@ extension FileManager {
         let string = attribute[FileAttributeKey("NSFileType")] as! String
         
         if string == "NSFileTypeDirectory" {
-            delegate.startCompositFile(file: path)
-            try compositFiles(directory: path)
-            delegate.endCompositFile(file: path)
+            delegate.startComposeFile(file: path)
+            try composeFiles(directory: path)
+            delegate.endComposeFile(file: path)
         }
         else {
             delegate.startDivideFile(file: path)
@@ -191,9 +191,9 @@ extension FileManager {
         try! file.jsonString().write(to: URL(fileURLWithPath: directory + "/" + FileManager.ConfigFilePath), atomically: true, encoding: String.Encoding.utf8)
     }
     
-    func compositFiles(directory: String) throws {
+    func composeFiles(directory: String) throws {
         
-        let file = try prepareCompositFiles(directory: directory)
+        let file = try prepareComposeFiles(directory: directory)
         
         if file.valid() {
             
@@ -223,7 +223,7 @@ extension FileManager {
         }
     }
     
-    private func prepareCompositFiles(directory: String) throws -> File {
+    private func prepareComposeFiles(directory: String) throws -> File {
         
         let configPath = directory + "/" + FileManager.ConfigFilePath
         

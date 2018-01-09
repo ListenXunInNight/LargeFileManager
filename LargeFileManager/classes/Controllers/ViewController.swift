@@ -10,14 +10,14 @@ import Cocoa
 
 enum Status {
     
-    case compositing    //!< 正在组装
-    case composited     //!< 组装完成
+    case composing    //!< 正在组装
+    case composed     //!< 组装完成
     case dividing       //!< 正在切割
     case divided        //!< 切割完成
     case free           //!< 空闲状态
 }
 
-class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate {
+class ViewController: NSViewController, DragDropViewDelegate, HandleFileDelegate {
     
     @IBOutlet weak var dragDropView: DragDropView!
     @IBOutlet weak var addBtn: NSButton!
@@ -94,7 +94,7 @@ class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate
                 self.dragDropView.isHidden = false
                 self.activityIncicator.stopAnimation(nil)
                 break
-            case .compositing:
+            case .composing:
                 self.addBtn.isHidden = true
                 self.infoLab.isHidden = false
                 self.fileLab.isHidden = false
@@ -102,7 +102,7 @@ class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate
                 self.activityIncicator.startAnimation(nil)
                 self.infoLab.stringValue = "正在组装..."
                 break
-            case .composited:
+            case .composed:
                 self.alert(msg: self.fileLab.stringValue + "已组装完成", style: .informational)
                 self.updateStatus(status: .free)
                 break
@@ -135,7 +135,7 @@ class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate
             
             for path in paths {
                 do {
-                    try FileManager.default.handlerFile(path: path, delegate: self)
+                    try FileManager.default.handleFile(path: path, delegate: self)
                 }
                 catch {
                     switch error {
@@ -177,13 +177,13 @@ class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate
         updateStatus(status: .divided)
     }
     
-    func startCompositFile(file: String) {
+    func startComposeFile(file: String) {
         updateFileLab(file: file)
-        updateStatus(status: .compositing)
+        updateStatus(status: .composing)
     }
-    func endCompositFile(file: String) {
+    func endComposeFile(file: String) {
         updateFileLab(file: file)
-        updateStatus(status: .composited)
+        updateStatus(status: .composed)
     }
 }
 
