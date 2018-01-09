@@ -37,6 +37,8 @@ extension AppDelegate {
         vc.presentViewController(settingsVC, asPopoverRelativeTo: vc.view.bounds, of: vc.view, preferredEdge: .maxX, behavior: NSPopover.Behavior.transient)
     }
     @IBAction func clickedHelpMenuItem(_ sender: NSMenuItem) {
-        print("帮助")
+        NSWorkspace.shared.open(URL(string: "https://github.com/ListenXunInNight/LargeFileManager")!)
     }
+    
+    
 }

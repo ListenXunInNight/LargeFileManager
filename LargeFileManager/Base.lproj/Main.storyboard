@@ -12,36 +12,36 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="LargeFileManager" id="1Xt-HY-uBw">
+                            <menuItem title="文件切割器" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="LargeFileManager" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="文件切割器" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About LargeFileManager" id="5kV-Vb-QxS">
+                                        <menuItem title="关于" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences..." keyEquivalent="," id="LAI-hP-f9Z">
+                                        <menuItem title="偏好设置" keyEquivalent="," id="LAI-hP-f9Z">
                                             <connections>
                                                 <action selector="clickedPreferencesMenuItem:" target="Voe-Tx-rLC" id="m2V-h9-WIp"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="YW1-j7-4pA"/>
-                                        <menuItem title="Hide LargeFileManager" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="隐藏" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                        <menuItem title="隐藏其他" keyEquivalent="h" id="Vdr-fp-XzO">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit LargeFileManager" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="退出" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -53,7 +53,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                                        <menuItem title="关闭" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
                                             </connections>
@@ -65,7 +65,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="LargeFileManager Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Github" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="clickedHelpMenuItem:" target="Voe-Tx-rLC" id="SA6-24-jUo"/>
                                             </connections>

@@ -51,6 +51,8 @@ class ViewController: NSViewController, DragDropViewDelegate, HandelFileDelegate
         let panel = NSOpenPanel.FilePanel()
         weak var weakpanel = panel
         panel.beginSheetModal(for: NSApplication.shared.keyWindow!) { (response) in
+            
+            guard weakpanel!.urls.count != 0 else {return}
             var paths = [String]()
             
             for url in weakpanel!.urls {
